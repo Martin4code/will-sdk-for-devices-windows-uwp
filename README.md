@@ -9,7 +9,7 @@ The benefits of using the CDL include:
 
 * Less implementation effort for developers: integration of a single library gives support for a range of input devices
 * The flexibility to include support for non-Wacom devices in an application
-* The freedom to take full advantage of the WILLâ„¢ digital ink ecosystem to provide high quality digital ink rendering without sacrificing the value of raw pen data needed in processes such as signature verification
+* The freedom to take full advantage of the WILL™ digital ink ecosystem to provide high quality digital ink rendering without sacrificing the value of raw pen data needed in processes such as signature verification
 * A generic interface relieves the application code from direct control of the connected hardware
 
 Using the library you can:
@@ -36,7 +36,8 @@ Regardless of the development platform and device type a consistent approach is 
 ![CDL-Device-Manager](images/DeviceManager.png)
 
 ### Ink Device Manager
-    Use the device manager to receive a list of named devices that are available for connection
+    In Windows the Device Manager is implemented as a direct call to scan for connected devices. 
+    The scan function returns a list of named devices that are available for connection.
 ### Ink Device
     Connect to a named device and retrieve properties
 ### Ink Service
@@ -180,9 +181,9 @@ The sample app uses InkCanvas control to process and display captured digital in
 
 Alternatively, there are three events through which you can receive data in real time:
 
-* onStrokeStart - A new stroke was started.
-* onStrokeMove - A new part was added to the current stroke.
-* onStrokeEnd - The stroke was finished. Unlike the previous two events, this one also provides as a parameter ```InkStroke``` containing the data describing the whole stroke.
+* StrokeStarted - A new stroke was started.
+* StrokeUpdated - A new part was added to the current stroke.
+* StrokeEnded - The stroke was finished. Unlike the previous two events, this one also provides as a parameter ```InkStroke``` containing the data describing the whole stroke.
 
 ---
 
